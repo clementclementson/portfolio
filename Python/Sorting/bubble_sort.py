@@ -1,24 +1,6 @@
-import random
 import matplotlib
 import matplotlib.pyplot as plt
-
-def random_data(range_values):
-    array = []
-
-    for index in range(range_values):
-        array.append(random.randint(0, 100))
-
-    return array
-
-def linear_data(range_values):
-    array = []
-    i = range_values
-
-    while i > 0:
-        array.append(i)
-        i = i -1
-
-    return array
+import data_generator as gen
 
 def bubble_sort(range_values):
     xarray = []
@@ -26,7 +8,7 @@ def bubble_sort(range_values):
     for index in range(range_values):
         xarray.append(index)
 
-    array = random_data(range_values)
+    array = gen.random_data(range_values)
 
     for i in range(len(array) - 1):
         for j in range(0, (len(array) - i - 1)):
@@ -43,6 +25,8 @@ def bubble_sort(range_values):
 
     plt.plot(xarray, array)
     plt.show()
+
+
 
 range_values = 100
 bubble_sort(range_values)
